@@ -1,0 +1,73 @@
+.takenotetwo {
+  border: 2px solid rgb(188, 180, 180);
+  width: 40vw;
+  height: 15vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  justify-content: space-evenly;
+  margin-left: auto;
+  margin-right: auto;
+}
+.markone {
+  height: 30%;
+  width: 95%;
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+  justify-content: space-between;
+}
+.title {
+  width: 320%;
+  height: 100%;
+  border: none;
+  outline: none;
+}
+.notep1 {
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+}
+.pin {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: end;
+}
+.marktwo {
+  height: 30%;
+  width: 95%;
+  flex-direction: row;
+  border: none;
+  outline: none;
+}
+.markthree {
+  width: 100%;
+  height: 20%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.part1 {
+  display: flex;
+  flex-direction: row;
+  width: 60%;
+  height: 100%;
+  margin-left: 14px;
+}
+.v1 {
+  display: flex;
+  flex-direction: row;
+  width: 20%;
+  height: 100%;
+}
+.part2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 20%;
+  height: 100%;
+}
