@@ -7,13 +7,23 @@ import ViewStreamIcon from "@mui/icons-material/ViewStream";
 import SettingsIcon from "@mui/icons-material/Settings";
 import AppsIcon from "@mui/icons-material/Apps";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import { Link, redirect } from "react-router-dom";
 
-function Header() {
+function Header(props) {
+  const icon = () => {
+    props.listenToHeader();
+  };
+
+  function deleteToken() {
+    localStorage.removeItem("token");
+    return redirect("/");
+  }
+
   return (
     <div className="header">
       <div className="fbox">
         <div className="menu">
-          <MenuIcon />
+          <MenuIcon onClick={icon} />
         </div>
         <div className="logo">
           <img
@@ -54,7 +64,9 @@ function Header() {
             <AppsIcon />
           </div>
           <div className="profile">
-            <AccountCircleIcon />
+            <Link to="/" onClick={deleteToken}>
+              <AccountCircleIcon />
+            </Link>
           </div>
         </div>
         <div></div>
