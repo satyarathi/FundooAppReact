@@ -8,23 +8,43 @@ import Button from "@mui/material/Button";
 import SignUp from "./pages/signup/signup";
 import SignIn from "./pages/signin/signin";
 import TakeNoteThree from "./component/takenotethree/takenotethree";
+import Dashboard from "./pages/dashboard/Dashboard";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import ProtectedRoute from "./routes/proctectedRoutes";
+import AuthRoute from "./routes/authRoute";
 
 function App() {
   return (
     <div className="App">
-      <Header />
-      <TakeNoteOne />
-      <TakeNoteTwo />
-      <TakeNoteThree />
-      {/* <TextField
-        id="outlined-basic"
-        label="Outlined"
-        variant="outlined"
-        size="small"
-      />
-      <Button variant="contained">Contained</Button> */}
-      {/* <SignIn /> */}
-      {/* <SignUp /> */}
+      <BrowserRouter>
+        <Routes>
+          <Route
+            path="/"
+            exact
+            element={
+              <AuthRoute>
+                <SignIn />
+              </AuthRoute>
+            }
+          />
+          <Route
+            path="/signup"
+            element={
+              <AuthRoute>
+                <SignUp />
+              </AuthRoute>
+            }
+          />
+          <Route
+            path="/dashboard"
+            element={
+              <ProtectedRoute>
+                <Dashboard />
+              </ProtectedRoute>
+            }
+          />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

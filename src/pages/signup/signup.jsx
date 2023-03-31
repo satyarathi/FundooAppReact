@@ -3,12 +3,16 @@ import "./signup.css";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import { signupp } from "../../services/userservice";
+import { Link } from "react-router-dom";
 
 const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
 const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
 const nameReg = /^[A-Z]{1}[a-zA-Z]+$/;
 
-function SignUp() {
+function SignUp(props) {
+  // const redirectToSignin = () => {
+  //   props.listenToTakeNoteOne();
+  // };
   const [signupObj, setSignupObj] = React.useState({
     firstName: "",
     lastName: "",
@@ -177,9 +181,12 @@ function SignUp() {
           </div>
         </div>
         <div className="box6">
-          <div>Sign in instead</div>
           <div>
-            <Button onClick={submit} variant="contained">
+            {" "}
+            <Link to="/">Sign in instead</Link>
+          </div>
+          <div>
+            <Button onClick={submit} signinin variant="contained">
               Next
             </Button>
           </div>

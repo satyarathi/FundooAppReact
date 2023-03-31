@@ -1,21 +1,23 @@
 .takenoteone {
-  border: 2px solid rgb(188, 180, 180);
-  width: 40vw;
-  height: 6vh;
+  /* border: 1px solid rgb(188, 180, 180); */
+  width: 40px;
+  height: 5px;
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-top: 30px;
   margin-left: auto;
   margin-right: auto;
+  border-radius: 5px;
 }
 
 .typenote {
   width: 100%;
-  height: 100%;
+  height: 90%;
   display: flex;
   flex-direction: row;
   margin-top: 10px;
+  align-items: center;
+  justify-content: center;
 }
 .note001 {
   width: 70%;

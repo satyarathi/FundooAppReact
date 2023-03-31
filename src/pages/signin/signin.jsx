@@ -3,6 +3,7 @@ import "./signin.css";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import { signinin } from "../../services/userservice";
+import { Link, redirect, useNavigate } from "react-router-dom";
 
 const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
 const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
@@ -15,6 +16,8 @@ function SignIn() {
     passwordError: false,
     passwordHelper: "",
   });
+
+  const navigate = useNavigate();
 
   const takeEmail = (event) => {
     // setn((prev)=>prev+1)
@@ -58,6 +61,9 @@ function SignIn() {
     if (emailTest === true && passwordTest === true) {
       let response = await signinin(signinObj);
       console.log(response);
+      localStorage.setItem("token", response.data.data.token);
+      // return redirect("/dashboard");
+      navigate("/dashboard");
     }
   };
   return (
@@ -70,7 +76,7 @@ function SignIn() {
         />
       </div>
       <div className="text">
-        <h3>Sign in</h3>
+        <h4>Sign in</h4>
         <div>Use your google account</div>
       </div>
       <div className="email">
@@ -100,16 +106,12 @@ function SignIn() {
       </div>
       <div className="create">
         <div className="caccount">
-          <a
-            href="https://accounts.google.com/signup/v2/webcreateaccount?biz=false&cc=IN&continue=https%3A%2F%2Fmyaccount
-                    .google.com%3Futm_source%3Daccount-marketing-page%26utm_medium%3Dgo-to-account-button&dsh=S-435941888%3A1678800042859784&flowEntry=SignUp&flowName=GlifWebSignIn&service=accountsettings"
-          >
-            Create account
-          </a>
+          <Link to="/signup">Create account</Link>
         </div>
-        <div>
+        <div className="linkbutton">
           <Button onClick={submit} variant="contained">
             Next
+            {/* <Link to="/dashboard">Next</Link> */}
           </Button>
         </div>
       </div>

@@ -1,56 +1,9 @@
 .takenotethree {
-  border: 2px solid rgb(188, 180, 180);
-  width: 18vw;
-  height: 15vh;
+  /* border: 1px solid rgb(188, 180, 180); */
+  width: 250px;
+  height: 140px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  margin-top: 20px;
-
-  margin-left: 250px;
-  margin-right: auto;
-}
-.marktwop1 {
-  margin-top: 10px;
-  height: 30%;
-  width: 95%;
-  display: flex;
-  flex-direction: row;
-
-  justify-content: space-between;
-}
-.title2 {
-  width: 30%;
-  height: 50%;
-  border: none;
-  outline: none;
-}
-.note2 {
-  width: 100%;
-  height: 100%;
-  border: none;
-  outline: none;
-}
-.pin2 {
-  display: flex;
-  justify-content: end;
-}
-.marktwop2 {
-  height: 40%;
-  width: 95%;
-  display: flex;
-}
-.partp1 {
-  display: flex;
-  flex-direction: row;
-  width: 95%;
-  height: 20%;
-  margin-left: 10px;
-  justify-content: center;
-  margin-bottom: 10px;
-}
-.pv1 {
-  display: flex;
-  flex-direction: row;
-  width: 20%;
+  margin: 10px;
+  border-radius: 5px;
 }
